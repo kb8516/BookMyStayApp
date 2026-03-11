@@ -1,3 +1,71 @@
+// Version 2.1
+
+// Abstract class representing a general Room
+abstract class Room {
+
+    private int beds;
+    private int size;
+    private double price;
+
+    // Constructor
+    public Room(int beds, int size, double price) {
+        this.beds = beds;
+        this.size = size;
+        this.price = price;
+    }
+
+    // Method to display common room details
+    public void displayRoomDetails() {
+        System.out.println("Beds: " + beds);
+        System.out.println("Size: " + size + " sq ft");
+        System.out.println("Price: $" + price);
+    }
+
+    // Abstract method
+    public abstract String getRoomType();
+}
+
+
+// Single Room class
+class SingleRoom extends Room {
+
+    public SingleRoom() {
+        super(1, 200, 100);
+    }
+
+    public String getRoomType() {
+        return "Single Room";
+    }
+}
+
+
+// Double Room class
+class DoubleRoom extends Room {
+
+    public DoubleRoom() {
+        super(2, 300, 150);
+    }
+
+    public String getRoomType() {
+        return "Double Room";
+    }
+}
+
+
+// Suite Room class
+class SuiteRoom extends Room {
+
+    public SuiteRoom() {
+        super(3, 500, 300);
+    }
+
+    public String getRoomType() {
+        return "Suite Room";
+    }
+}
+
+
+// Main Application Class
 import java.util.LinkedList;
 import java.util.Queue;
 
